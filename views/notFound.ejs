@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Página No Encontrada</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body class="grey lighten-4">
+
+  <!-- Menú de Navegación Unificado -->
+  <nav class="blue darken-3">
+    <div class="nav-wrapper container">
+      <a href="/" class="brand-logo">Tecsup Games</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/about">Acerca de</a></li>
+        <li><a href="/contact">Contacto</a></li>
+        <li><a href="/games">Videojuegos</a></li>
+        <li><a href="/admin">Admin</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Tarjeta de Contenedor de Error -->
+  <div class="container center-align" style="margin-top: 80px; max-width: 550px;">
+    <div class="card-panel white z-depth-2" style="border-radius: 12px; padding: 40px 20px;">
+      <!-- Icono de Advertencia Emulado -->
+      <div style="font-size: 4.5rem; margin-bottom: 10px;">⚠️</div>
+      
+      <h3 class="red-text text-darken-2" style="font-weight: 700; margin-top: 0;">404</h3>
+      <h5 class="grey-text text-darken-3" style="font-weight: 500;">Página no encontrada</h5>
+      
+      <div class="card-panel red lighten-5 red-text text-darken-3" style="box-shadow: none !important; margin: 25px 0; border-radius: 6px;">
+        La ruta <strong style="word-break: break-all;"><%= url %></strong> no existe en este servidor web.
+      </div>
+      
+      <p class="grey-text" style="margin-bottom: 30px;">Por favor, verifica que la dirección URL esté bien escrita o regresa al panel principal.</p>
+      
+      <a href="/" class="waves-effect waves-light btn-large blue darken-2" style="width: 100%; font-weight: bold; border-radius: 6px;">
+        Volver al Inicio
+      </a>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <nav class="blue darken-3">
+    <div class="nav-wrapper container">
+      <a href="/" class="brand-logo">Tecsup Games</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/about">Acerca de</a></li>
+        <li><a href="/contact">Contacto</a></li>
+        <li class="active"><a href="/games">Videojuegos</a></li>
+        <li><a href="/admin">Admin</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container" style="margin-top: 30px;">
+    <div class="row">
+      <div class="col s12 m5">
+        <div class="card-panel">
+          <h5>Registrar Videojuego</h5>
+          <form action="/games/add" method="POST">
+            <div class="input-field">
+              <input id="titulo" type="text" name="titulo" required>
+              <label for="titulo">Título del videojuego</label>
+            </div>
+            <div class="input-field">
+              <input id="plataforma" type="text" name="plataforma" required>
+              <label for="plataforma">Plataforma (PC, PS5, etc.)</label>
+            </div>
+            <div class="input-field">
+              <input id="genero" type="text" name="genero" required>
+              <label for="genero">Género</label>
+            </div>
+            <div class="input-field">
+              <input id="año" type="number" name="año" min="1950" max="2030" required>
+              <label for="año">Año de Lanzamiento</label>
+            </div>
+            <div class="input-field">
+              <input id="calificacion" type="number" name="calificacion" min="1" max="5" required>
+              <label for="calificacion">Calificación (1 al 5)</label>
+            </div>
+            <button type="submit" class="waves-effect waves-light btn blue block" style="width: 100%;">Agregar al Catálogo</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="col s12 m7">
+        <h5>Catálogo Registrado</h5>
+        <table class="striped responsive-table bordered">
+          <thead class="blue lighten-4">
+            <tr>
+              <th>Título</th>
+              <th>Plataforma</th>
+              <th>Género</th>
+              <th>Año</th>
+              <th>Calificación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% games.forEach(game => { %>
+              <tr>
+                <td><strong><%= game.titulo %></strong></td>
+                <td><%= game.plataforma %></td>
+                <td><span class="chip text-white blue lighten-1"><%= game.genero %></span></td>
+                <td><%= game.año %></td>
+                <td><%= "⭐".repeat(game.calificacion) %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
